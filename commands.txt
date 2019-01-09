@@ -10,4 +10,5 @@ git log
 git remote set-url origin https://github.com/rishu89/automatedtimetable.git
 git push -u origin master
 git gc // remove previous commits 
+git remote -v // check remote origin
  
