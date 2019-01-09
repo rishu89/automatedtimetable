@@ -7,8 +7,7 @@ git config user.email "-----"
 git config --global user.name "----"
 git config --global user.email "-----"
 git log
-git remote add origin git@github.com:arundhati11/just_practise.git
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_rsa
-clip < ~/.ssh/id_rsa.pub
+git remote set-url origin https://github.com/rishu89/automatedtimetable.git
+git push -u origin master
+git gc // remove previous commits 
+ 
