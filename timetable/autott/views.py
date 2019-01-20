@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
 from django.http import HttpResponse, HttpResponseRedirect
 
+
 def user_login(request):
     if request.method == "POST":
         phone = request.POST.get('phone')
@@ -10,12 +11,12 @@ def user_login(request):
         user = authenticate(username=phone, password=password)
         if user:
             login(request, user)
-            return HttpResponseRedirect('/users/home')
+            return HttpResponseRedirect('/autott/home')
         else:
             error = "Sorry! Phone number or password didn't match, Please try again !"
-            return render(request, 'login/index.html',{'error':error})
+            return render(request, 'login.html',{'error':error})
     else:
-        return render(request, 'login/index.html')
+        return render(request, 'login.html')
 
 def users_signup(request):
     if request.method == "POST":
@@ -32,6 +33,6 @@ def users_signup(request):
             return HttpResponseRedirect("/")
         else:
             error = "Password Mismatch"
-            return render(request, 'login/signup.html',{"error":error})
+            return render(request, 'signup.html',{"error":error})
     else:
-        return render(request, 'login/signup.html')
+        return render(request,'signup.html')
