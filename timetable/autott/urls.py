@@ -3,6 +3,6 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^login',"autott.views.user_login", name='login_url'),
-    url(r'^signup', "autott.views.user_signup", name='signup_url'),
+    url('^login',"autott.views.autott_login", name='login_url'),
+    url(r'^signup', "autott.views.autott_signup", name='signup_url'),
 ]
