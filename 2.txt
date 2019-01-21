@@ -1,2 +1,0 @@
-this contains the utility functions of 1.txt of version 2
-
