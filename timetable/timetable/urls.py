@@ -4,7 +4,7 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('home', include('autott.url')),
+    url('home/', include('autott.url')),
 ]
    
 
