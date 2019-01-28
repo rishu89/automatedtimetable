@@ -1,9 +1,13 @@
-from django.conf.urls import include, url
+from django.urls import include, path
 from django.contrib import admin
-from  . import views 
+from . import views 
 
+
+"""urlpatterns = [
+    path('login/',views.user_login, name='login'),
+    path('signup/',views.user_signup, name='signup'),
+]"""
 
 urlpatterns = [
-    url('login/',views.user_login),
-    url('signup/',views.users_signup),
+    path('trial/',views.home),
 ]
