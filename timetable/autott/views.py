@@ -3,8 +3,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
 from django.http import HttpResponse, HttpResponseRedirect
 
+def home(request):
+    return HttpResponse("<h1>This is just a homepage")
 
-def user_login(request):
+"""def user_login(request):
     if request.method == "POST":
         phone = request.POST.get('phone')
         password = request.POST.get('password')
@@ -18,7 +20,7 @@ def user_login(request):
     else:
         return render(request, 'login.html')
 
-def users_signup(request):
+def user_signup(request):
     if request.method == "POST":
         email = request.POST.get('email')
         phone = request.POST.get('phone')
@@ -36,3 +38,4 @@ def users_signup(request):
             return render(request, 'signup.html',{"error":error})
     else:
         return render(request,'signup.html')
+"""
