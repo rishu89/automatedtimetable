@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>timetable mangement system</title>
+   
+	<meta charset="UTF-8">
+	<meta name="description" content="WebUni Education Template">
+	<meta name="keywords" content="webuni, education, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'owl.carousel.css' %}"/>
+	<link rel="stylesheet" href="{% static 'style.css' %}"/>
+
+
+
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+          <a class="navbar-brand" href="{% url 'index' %}">College TT</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-capitalize">{{ request.user.student.name }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-3">
+					<div class="site-logo">
+						<img src="{% static 'logo1.png' %}" alt="">
+					</div>
+					<div class="nav-switch">
+						<i class="fa fa-bars"></i>
+					</div>
+				</div>
+				<div class="col-lg-9 col-md-9">
+					<!--<a href="" class="site-btn header-btn">Login</a>-->
+					<nav class="main-menu">
+						<ul>
+							<li><a href="http://www.iiitg.ac.in/">Home</a></li>
+							<li><a href="#">About us</a></li>
+							<li><a href="http://127.0.0.1:8000/accounts/login/">faculty login</a></li>
+							<li><a href="#">Admin login</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Header section end -->
+
+
+	<!-- Hero section -->
+	<section class="hero-section set-bg" data-setbg="{% static 'bg.jpg' %}">
+		<div class="container">
+			<div class="hero-text text-white">
+				<h2>TIMETABLE MANAGEMENT SYSTEM</h2>
+				<p><h3>Get the most efficient timetable</h3></p>
+			</div>
+			<div class="card">
+              <a href="{% url 'timetable' request.user.student.class_id_id %}">
+               <center>
+            <div class="card-footer">
+                <a class="btn btn-primary" role="button" href="{% url 'timetable' request.user.student.class_id_id %}">View TimeTable</a>
+            </div>
+          </div>
+		</div>
+	</section>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="/accounts/logout">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{% static 'jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'bootstrap.min.js' %}"></script>
+	<script src="{% static 'mixitup.min.js' %}"></script>
+	<script src="{% static 'circle-progress.min.js' %}"></script>
+	<script src="{% static 'owl.carousel.min.js' %}"></script>
+	<script src="{% static 'main.js' %}"></script>
+</html>
