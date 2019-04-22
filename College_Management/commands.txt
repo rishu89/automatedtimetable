@@ -1,0 +1,5 @@
+coverage:
+	coverage run --source='.' manage.py test myapp
+	coverage report
+run tests.py:
+	python manage.py test info -v 2
